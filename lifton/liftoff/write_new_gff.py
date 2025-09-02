@@ -98,9 +98,9 @@ def write_line(feature, out_file, output_type):
 
 
 def make_gff_line(attr_dict, feature):
-    if feature.featuretype != "CDS":
+    try:
         attributes_str = "ID=" + attr_dict["ID"][0] + ";" #make ID the first printed attribute
-    else:
+    except:
         attributes_str = ""
     for attr in attr_dict:
         if attr != "copy_id":
