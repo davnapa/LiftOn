@@ -73,7 +73,7 @@ class Lifton_GENE:
             self.entry.attributes["extra_copy_number"] = [str(self.copy_num)]        
         self.__update_gene_copy(ref_features_dict)
         self.entry.id = self.entry.attributes["ID"][0]
-        gene_interval = Interval(self.entry.start, self.entry.end, self.entry.id)
+        gene_interval = Interval(self.entry.start-1, self.entry.end, self.entry.id)
         if self.entry.seqid not in tree_dict.keys():
             tree_dict[self.entry.seqid] = IntervalTree()
         tree_dict[self.entry.seqid].add(gene_interval)

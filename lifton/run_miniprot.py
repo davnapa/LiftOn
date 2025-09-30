@@ -103,7 +103,7 @@ ref_proteins, ref_trans, tree_dict, ref_features_dict, args):
 
 def process_miniprot(mtrans, ref_db, m_feature_db, tree_dict, tgt_fai, ref_proteins, ref_trans, ref_features_dict, fw_score, m_id_2_ref_id_trans_dict, ref_features_len_dict, ref_trans_exon_num_dict, ref_features_reverse_dict, args):
     mtrans_id = mtrans.attributes["ID"][0]
-    mtrans_interval = Interval(mtrans.start, mtrans.end, mtrans_id)
+    mtrans_interval = Interval(mtrans.start-1, mtrans.end, mtrans_id)
     is_overlapped = lifton_utils.check_ovps_ratio(mtrans, mtrans_interval, args.overlap, tree_dict)
     lifton_gene = None
     lifton_trans = None
